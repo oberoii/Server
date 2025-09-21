@@ -508,13 +508,14 @@ def start_task():
         return {'status': 'success', 'message': 'Task stopped'}
     return {'status': 'error', 'message': 'Task not found'}, 404
 
-@app.route('/task_status/<task_id>', methods=['GET'])
-def task_status(task_id):
+   @app.route('/task_status/<task_id>', methods=['GET'])
+   def task_status(task_id):
     if task_id in active_tasks:
         return active_tasks[task_id]
     return {'status': 'error', 'message': 'Task not found'}, 404
 
-if name == 'main':
+    if name == 'main':
 
     app.run(host='0.0.0.0', port=5000)
+
 
