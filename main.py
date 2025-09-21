@@ -503,7 +503,7 @@ def start_task():
     }
     @app.route('/stop_task/<task_id>', methods=['POST'])
     def stop_task(task_id):
-    if task_id in active_tasks:
+     if task_id in active_tasks:
         active_tasks[task_id]['status'] = 'stopped'
         return {'status': 'success', 'message': 'Task stopped'}
     return {'status': 'error', 'message': 'Task not found'}, 404
@@ -517,5 +517,6 @@ def start_task():
     if name == 'main':
 
     app.run(host='0.0.0.0', port=5000)
+
 
 
